@@ -27,10 +27,10 @@
 
 Установить pyinstaller: pip install pyinstaller 
 
-Затем перейти в папку с Вашим файлом .py в командной строке (при помощи команды cd) 
+Затем перейти в папку с main.py в командной строке (при помощи команды cd) 
 
 Запустить команду pyinstaller не забудьте указать имя вашего скрипта 
 
-pyinstaller --onefile <your_script_name>.py 
+pyinstaller --onefile main.py 
 
-В итоге у вас в папке появится папка src и там будет .exe файл.
+В итоге у вас в папке появится папка src и там будет main.exe файл
