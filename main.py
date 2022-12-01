@@ -4,7 +4,11 @@ import win
  
 
 pygame.init()
+
+# Sound
 pygame.mixer.music.load('Sound_08421.mp3')
+
+# Screen
 margin = 5
 size_block = 110
 width = heigth = size_block * 4 + margin * 5
@@ -13,10 +17,12 @@ size_window = (width, heigth)
 screen = pygame.display.set_mode(size_window)
 pygame.display.set_caption("ИГРА - Крестики нолики")
 
+# Colors
 black = (0, 0, 0)
 red = (255, 0, 0)
-green = (0, 255, 0)
+blue = (0, 0, 255)
 white = (255, 255, 255)
+
 mas = [[0] * 4 for i in range(4)]
 k = 0
 game_over = False
@@ -47,7 +53,7 @@ while True:
             if mas[row][col] == 'x':
                color = red
             elif mas[row][col] == 'o':
-               color = green
+               color = blue
             else:
                color = white            
             x = col * size_block + (col + 1) * margin
@@ -56,7 +62,7 @@ while True:
             if color == red:
                pygame.draw.line(screen, white, (x + 5, y + 5), (x + size_block - 5, y + size_block - 5), 5)
                pygame.draw.line(screen, white, (x + size_block - 5, y + 5), (x + 5, y + size_block - 5), 5)
-            elif color == green:
+            elif color == blue:
                pygame.draw.circle(screen, white, (x + size_block // 2, y + size_block // 2), size_block // 2, 5)
    if (k - 1) % 2 == 0:
       game_over = win.check_win(mas, 'x')
@@ -68,7 +74,7 @@ while True:
       pygame.mixer.music.play()
       pygame.time.delay(5)
       screen.fill(black)
-      font = pygame.font.SysFont('italic', 80)
+      font = pygame.font.SysFont('arial', 80)
       text1 = font.render(game_over, True, white)
       text_rect = text1.get_rect()
       text_x = screen.get_width() / 2 - text_rect.width / 2
