@@ -19,6 +19,7 @@ pygame.display.set_caption("ИГРА - Крестики нолики")
 
 # Colors
 black = (0, 0, 0)
+gray = (200, 200, 200)
 red = (255, 0, 0)
 blue = (0, 0, 255)
 white = (255, 255, 255)
@@ -73,7 +74,7 @@ while True:
    if game_over:
       pygame.mixer.music.play()
       pygame.time.delay(5)
-      screen.fill(black)
+      screen.fill(gray)
       font = pygame.font.SysFont('arial', 80)
       text1 = font.render(game_over, True, white)
       text_rect = text1.get_rect()
